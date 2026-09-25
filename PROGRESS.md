@@ -3,8 +3,9 @@
 Updated: 2026-09-25
 Owner: Hung
 State: 0.2.9 is tagged; marketplace #194 points at `^0.2.9` and the overview.
-Test prune (uncommitted branch `codex/prune-low-signal-tests-20260925`): 7 low-signal
-vitest files removed, 10 files / 107 tests retained. `npm test` passes.
+Test prune on branch `codex/prune-low-signal-tests-20260925` (committed `71c22d9`,
+corrected below): 5 unit files fully removed, 2 restored in trimmed form.
+12 files / 111 tests retained. `npm test` passes.
 
 ## Resume here
 
@@ -69,3 +70,27 @@ is the integration suite and stays. Removed 7 mirroring/redundant unit files (32
 ready, share-port, confirm, ports, ports-kill, ports-parse, ports-scan.
 No package script, CI config, or doc named a removed file. Verification artifact is
 outside the repo at `$TMPDIR/opencode/app-preview-prune-verify.txt`.
+
+## Test prune correction 2026-09-25
+
+Review found unique failure modes in two removed files, so they return in trimmed
+form (4 tests). `ports-classify.test.ts` keeps only `isDevProcess` hide/show cases
+ports-scan does not cover: uvicorn-as-dev-server (a misclassification hides a live
+FastAPI preview) and Spotify / `bb serve` denial. Dropped from that file: the
+node/docker/ControlCe asserts (covered through ports-scan), framework-from-command
+/ image labels (display-only; Astro and PostgreSQL attribution covered through
+ports-scan), `findProjectRoot`, and `projectNameFromCwd` (path helpers; project-root
+attribution covered through ports-scan). `browser-tabs.test.ts` keeps only dedup on
+update (duplicate preview tabs on refresh/settle) and remove-by-id-or-url (orphaned
+tab after stop); retained server tests assert presence with `some`, never counts or
+the by-url branch. Dropped: tab ordering before the launcher (positioning minutiae)
+and the open/close round-trip (covered through server start/stop RPC tests).
+Re-audited the other five removed files case-by-case: open-mode (one-line predicate
+mirrors and copy locks; manual/agent behavior covered through server tests),
+ports-actions (Set/Map loops; stamp path covered through the settle test,
+localhost-drop covered at the predicate level in share-port tests),
+ports-format (display mirrors; panel ordering/filter is cosmetic),
+rpc-input (generic helper; `JSON.stringify` already drops undefined object keys),
+workspace-error (retiring/provisioning/409 covered through RPC tests; the
+destroying/destroyed/error branches are copy variants of the same switch).
+Result: 12 files / 111 tests, `npm test` passes.

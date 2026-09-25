@@ -8,13 +8,13 @@ Before any work in this repo, read:
 1. `INDEX.md` — map of this tree
 2. `VISION.md`, `ROADMAP.md`, `PROGRESS.md`, `CHANGELOG.md`
 
-Desk memory is `../../MEMORY.md` on the workspace, not in this repo.
+For long-term context, use the personal Notion Brain hub and open its cited source before treating a claim as current. Product status and code live here.
 
 Then continue with the rest of this file.
 
 Hung's BB plugin for starting a worktree app and opening it in BB's in-app browser.
 Canonical source is this repository: `hungv47/app-preview`.
-Live clone: `~/0/forsvn/0-projects/app-preview`.
+Personal Mac checkout: `~/0/app-preview`.
 
 ## Commands
 

@@ -1,8 +1,10 @@
 # App Preview progress
 
-Updated: 2026-09-10
+Updated: 2026-09-25
 Owner: Hung
-State: 0.2.9 is tagged; marketplace #194 points at `^0.2.9` and the overview
+State: 0.2.9 is tagged; marketplace #194 points at `^0.2.9` and the overview.
+Test prune (uncommitted branch `codex/prune-low-signal-tests-20260925`): 7 low-signal
+vitest files removed, 10 files / 107 tests retained. `npm test` passes.
 
 ## Resume here
 
@@ -57,3 +59,13 @@ bb plugin reload app-preview
 ## Next action
 
 Wait for Sawyer to rerun the malicious-path tests on get-bb/marketplace#194.
+
+## Test prune 2026-09-25
+
+Branch `codex/prune-low-signal-tests-20260925`. No E2E suite exists; `server.test.ts`
+is the integration suite and stays. Removed 7 mirroring/redundant unit files (32 tests):
+`rpc-input`, `ports-actions`, `open-mode`, `workspace-error`, `browser-tabs`,
+`ports-format`, `ports-classify`. Retained 10 files / 107 tests: server, detect, paths,
+ready, share-port, confirm, ports, ports-kill, ports-parse, ports-scan.
+No package script, CI config, or doc named a removed file. Verification artifact is
+outside the repo at `$TMPDIR/opencode/app-preview-prune-verify.txt`.

@@ -1,5 +1,11 @@
 # App Preview changelog
 
+## 2026-09-25
+
+- Test prune: removed 7 low-signal vitest files (32 tests) that mirrored trivial
+  helpers or duplicated `server.test.ts` integration coverage. 10 files / 107 tests
+  remain (`npm test` passes). No script, CI, or doc changes needed.
+
 ## 2026-09-10
 
 - Tagged public `v0.2.9`. Marketplace #194 now installs `^0.2.9` and ships

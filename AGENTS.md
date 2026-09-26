@@ -8,13 +8,13 @@ Before any work in this repo, read:
 1. `INDEX.md` — map of this tree
 2. `VISION.md`, `ROADMAP.md`, `PROGRESS.md`, `CHANGELOG.md`
 
-For long-term context, read `~/air-workspace/forsvn-ops/AGENTS.md` and the relevant document in that ops repository. Product status and code live here.
+For area context, open the [Forsvn Linear document](https://linear.app/hungv47/document/forsvn-start-here-cabfade69716) and its relevant section. Product status and code live here.
 
 Then continue with the rest of this file.
 
 Hung's BB plugin for starting a worktree app and opening it in BB's in-app browser.
 Canonical source is this repository: `hungv47/app-preview`.
-Personal Mac checkout: `~/air-workspace/app-preview`.
+Locate the `app-preview` checkout by repository name; its parent folder may change.
 
 ## Commands
 

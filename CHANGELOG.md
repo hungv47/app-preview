@@ -1,5 +1,16 @@
 # App Preview changelog
 
+## 2026-09-25
+
+- Test prune: removed 7 low-signal vitest files (32 tests) that mirrored trivial
+  helpers or duplicated `server.test.ts` integration coverage. 10 files / 107 tests
+  remain (`npm test` passes). No script, CI, or doc changes needed.
+- Test prune correction: restored 4 unique failure-mode cases in trimmed form.
+  `ports-classify.test.ts` keeps uvicorn-as-dev-server and Spotify / `bb serve`
+  denial (hide/show behavior ports-scan does not cover). `browser-tabs.test.ts`
+  keeps update-instead-of-duplicate and remove-by-id-or-url. 12 files / 111 tests
+  remain (`npm test` passes).
+
 ## 2026-09-10
 
 - Tagged public `v0.2.9`. Marketplace #194 now installs `^0.2.9` and ships

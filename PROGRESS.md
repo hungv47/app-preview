@@ -1,6 +1,6 @@
 # App Preview progress
 
-Updated: 2026-09-25
+Updated: 2026-10-03
 Owner: Hung
 State: 0.2.9 is tagged; marketplace #194 points at `^0.2.9` and the overview.
 Test prune on branch `codex/prune-low-signal-tests-20260925` (committed `71c22d9`,
@@ -23,7 +23,9 @@ Sawyer review build.
 recipe only; environment paths are not interpolated. Agent start cannot pass `command`.
 Share/kill from the agent tool wait for `bb.ui.requestInput` with a confirmation token.
 Marketplace listing [get-bb/marketplace#194](https://github.com/get-bb/marketplace/pull/194)
-uses range `^0.2.9` and `overview/app-preview.md`.
+uses range `^0.2.9`, `subdir` `app`, and `overview/app-preview.md`.
+Branch tip `38eb2aa` on `hungv47/marketplace` is pushed. Sawyer's install check
+is answered in the PR comment. The PR is still open.
 
 0.2.8 ranks multi-URL ready hints so Open/share prefer Vite/Next `Local:` (and UI lines) over an
 earlier API listen URL. On a port change with an existing connect share, refreshLogs shares the new
@@ -59,7 +61,7 @@ bb plugin reload app-preview
 
 ## Next action
 
-Wait for Sawyer to rerun the malicious-path tests on get-bb/marketplace#194.
+Wait for Sawyer to reinstall get-bb/marketplace#194 from `subdir` `app`.
 
 ## Test prune 2026-09-25
 

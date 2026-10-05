@@ -16,3 +16,7 @@ Do not subtree-push from `hungv47/ipse`.
 
 One preview process per worktree. Ports is a separate list/kill of what is already listening.
 It is not logs, watch, or a general `ps`. Share and kill refuse Docker-published ports and system apps.
+
+## Source map
+
+- [app/](app/) contains the BB plugin package.

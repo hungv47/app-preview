@@ -1,36 +1,47 @@
-# app-preview structure
+# App Preview structure
 
-This Git root owns the files tracked in [hungv47/app-preview](https://github.com/hungv47/app-preview). The repository is public. Keep private planning and external folder identities in the authorized Drive lookup.
+This public repository owns the BB plugin in `app/`. The package retains
+its historical `bb-plugin-app-preview` name; canonical source is
+[hungv47/app-preview](https://github.com/hungv47/app-preview).
 
-VISION.md records purpose. ROADMAP.md owns priorities, active work, blockers, and the live handoff. CHANGELOG.md records verified delivery. STRUCTURE.md maps ownership and working commands. BRAIN.md locates external materials.
+## Code architecture
 
-## Architecture and ownership
+The BB server entry registers preview tools/RPC and delegates to the
+lifecycle service. Detection turns supported application files into
+working-directory/argv recipes; readiness parsing identifies the usable
+URL. SQLite holds plugin state. The React panels use that same service
+for preview and port actions, with confirmation and classification guards.
 
-app/ owns the BB plugin, app recipe detection, thread-terminal lifecycle, port inspection, and preview controls. scripts/ contains maintenance helpers. The plugin has no authority to bypass share or kill confirmation.
+```text
+app/server.ts             BB server/tool registration
+app/service.ts            Preview lifecycle coordination
+app/detect.ts             Framework and start-recipe detection
+app/paths.ts              Worktree and path handling
+app/ready.ts              Ready-URL recognition
+app/store.ts              Plugin state persistence
+app/app.tsx               Preview panel
+app/ports-panel.tsx       Listener inventory/actions UI
+app/ports-scan.ts         Platform listener scanning
+app/ports-classify.ts     Process classification and guards
+app/ports-actions.ts      Port action coordination
+app/share-port.ts         BB Connect exposure
+app/confirm.ts            Plugin-issued confirmation tokens
+app/browser-tabs.ts       Browser tab lifecycle
+app/skills/app-preview/   Bundled agent workflow
+app/README.md             Installation, behavior, CLI, and settings
+app/THIRD_PARTY.md        Port Whisperer attribution
+scripts/publish-mirror.sh  Historical export helper
+```
 
-## Source map
+Tests live alongside these modules as `*.test.ts`, including lifecycle
+integration in [app/server.test.ts](app/server.test.ts).
+[README.md](README.md) has local installation and checks.
 
-| Path | Purpose |
-|---|---|
-| `app/` | Application source |
-| `CHANGELOG.md` | What has shipped |
-| `ROADMAP.md` | What will ship |
-| `scripts/` | Tooling |
-| `VISION.md` | Why this exists |
+## External knowledge architecture
 
-## Working commands
-
-- From `app`, run `bun install` before package work. Available commands: `bun run test`, `bun run lint`, `bun run typecheck`.
-
-Use [app/README.md](app/README.md) for setup details and project-specific validation. This record migration does not re-run application release or deployment gates.
-
-## Record history
-
-Useful current work moved to ROADMAP.md where this is a product. Location and repository facts moved here. Earlier exact records remain in Git history:
-
-- [PROGRESS.md at 586e2a2](https://github.com/hungv47/app-preview/blob/586e2a25801af0d72a0bc358a2dd31a48880c1db/PROGRESS.md)
-- [INDEX.md at 586e2a2](https://github.com/hungv47/app-preview/blob/586e2a25801af0d72a0bc358a2dd31a48880c1db/INDEX.md)
-
-## External materials and recall
-
-Use BRAIN.md for original media, sendables, and verification evidence. Keep deployable assets needed by a build in Git with their source and license. Mem0 is optional recall through the correct Executor v2 account. Store a scope, project key, source pointer, and truth date; open the current source before using a recalled claim. Do not upload credentials, private identity, medical, finance, or employer-confidential source bodies.
+[BRAIN.md](BRAIN.md) resolves `forsvn/app-preview` to Google Drive and
+its `OPEN THIS.md` navigation map. BB/SDK references, demonstration
+originals, private planning, and captures live there; plugin code,
+required runtime assets, licenses, and the bundled agent skill stay in
+Git. SQLite is runtime plugin state, not project knowledge storage.
+[STATUS.md](STATUS.md) owns the live lifecycle and deferred work.

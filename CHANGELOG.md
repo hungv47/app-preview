@@ -1,42 +1,27 @@
 # App Preview changelog
 
-## 2026-09-25
+Dates below retain the recorded release history. Later unreleased source
+and verification work is tracked in [STATUS.md](STATUS.md).
 
-- Test prune: removed 7 low-signal vitest files (32 tests) that mirrored trivial
-  helpers or duplicated `server.test.ts` integration coverage. 10 files / 107 tests
-  remain (`npm test` passes). No script, CI, or doc changes needed.
-- Test prune correction: restored 4 unique failure-mode cases in trimmed form.
-  `ports-classify.test.ts` keeps uvicorn-as-dev-server and Spotify / `bb serve`
-  denial (hide/show behavior ports-scan does not cover). `browser-tabs.test.ts`
-  keeps update-instead-of-duplicate and remove-by-id-or-url. 12 files / 111 tests
-  remain (`npm test` passes).
+## 2026-09-10 — 0.2.9
 
-## 2026-09-10
+- Tagged public `v0.2.9`: argv-based launches, scoped package support,
+  detected-recipe-only agent starts, and plugin-issued confirmations for
+  agent share/unshare/kill. Documented install/script/signal/Connect behavior.
 
-- Tagged public `v0.2.9`. Marketplace #194 now installs `^0.2.9` and ships
-  `overview/app-preview.md` (install, scripts, signaling, Connect). Origin
-  horsemen no longer point at the ipse subtree publisher.
-- Plugin 0.2.9: Start no longer interpolates workspace paths into the shell command. Launch is a working directory plus argv recipe; nested `cd` uses `./` so `CDPATH` cannot redirect it. Scoped package dirs (`packages/@acme/web`) stay startable. Agent `preview_app` cannot pass an arbitrary command. `preview_ports` share/unshare/kill wait for a BB confirmation that echoes a plugin-issued token. README discloses install, script execution, signaling, and Connect.
+## 2026-09-07 — 0.2.7–0.2.8
 
-## 2026-09-07
+- Added manual/agent browser modes, preferred frontend ready URLs, and
+  shared a replacement port before releasing the previous exposure.
 
-- Plugin 0.2.8: Open/share prefer Vite/Next `Local:` (and UI lines) over an earlier API listen URL. On a port change, share the new port before dropping the old connect expose.
-- Plugin 0.2.7: **Open the in-app browser** is now `manual` (default) or `agent`. Start does not open a tab unless set to agent. Stop closes it only in agent mode. Upgrades default to `manual` regardless of the old auto-open toggle. Agents get a live open-mode line each turn.
+## 2026-09-06 — 0.2.3–0.2.6
 
-## 2026-09-06
+- Added browser settings, Ports inventory/actions, BB Connect sharing,
+  guarded kill, preview Share/Unshare, and a git-install build fix.
 
-- Plugin 0.2.6: Preview Share/Unshare, Ports filter (preview-owned/shared first), cancelable kill confirm. Share stamps the preview row; Stop forgets the share cache.
-- Preview panel Share exposes the running port over bb connect when start did not get a getbb.app URL.
-- README: looping Preview panel demo (12s clip, 1.2 MB GIF).
-- Plugin 0.2.5: git install builds again. The Ports panel no longer pulls `@get-bb/plugin-sdk` into the frontend bundle.
-- Plugin 0.2.4: **Ports** sidebar plus `bb preview ports` / `share` / `unshare` / `kill`. Share is a bb connect URL. Share and kill refuse Docker-published ports and system apps. Start binds Node dev servers to 127.0.0.1 so Connect is not ECONNREFUSED on IPv6-only localhost.
-- Plugin 0.2.3: setting **Automatically open and close the in-app browser** (default on). Turn it off to open and close the tab yourself.
+## 2026-09-05 — 0.2.0–0.2.2
 
-## 2026-09-05
+- Added browser lifecycle integration, unavailable-worktree handling,
+  and Connect-based remote preview.
 
-- Product root moved from `personal/app-preview/` to `forsvn/app-preview/`. Public host stays
-  `hungv47/bb-plugin-app-preview`.
-- Plugin 0.2.2: on this Mac, Preview Open uses `bb connect expose` (`https://hung--<port>.getbb.app`) instead of failing the plugin tunnel.
-- Plugin 0.2.1: a retiring or gone worktree is explained in the panel instead of `HTTP 409: Environment unavailable`. Restart does not stop a preview that is already running there.
-- Plugin 0.2.0: start opens BB's in-app browser; stop closes it. No extra click.
-- Marketplace listing remains get-bb/marketplace#194.
+Earlier details remain in Git history; no new release is claimed here.

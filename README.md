@@ -5,7 +5,7 @@ BB plugin for starting worktree apps and listing, sharing, or stopping listeners
 - [VISION.md](VISION.md): users, outcomes, capabilities, and boundaries.
 - [BRAIN.md](BRAIN.md): external knowledge key and authorized Drive access.
 - [STRUCTURE.md](STRUCTURE.md): plugin architecture and repository map.
-- [STATUS.md](STATUS.md): dated source/release state and remaining checks.
+- [PROGRESS.md](PROGRESS.md): dated source/release state and remaining checks.
 
 ## Install from this checkout
 
@@ -24,4 +24,4 @@ a port through BB Connect, and Kill sends a process signal. Review the
 
 Development checks from `app/`: `npm test`, `npm run lint`, and
 `npm run typecheck`. [CHANGELOG.md](CHANGELOG.md) records release history;
-[STATUS.md](STATUS.md) records the legacy distribution-locator mismatch.
+[PROGRESS.md](PROGRESS.md) records the legacy distribution-locator mismatch.

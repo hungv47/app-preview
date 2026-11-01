@@ -1,12 +1,13 @@
 # Project context
 
-Read the four authoritative root records before project work:
+Before project work, read the PROGRESS snapshot and STRUCTURE's
+"Read before changing" section. Read the other records when the task needs
+them. Use the `horsemen` skill to update them.
 
-- [VISION.md](VISION.md): product, users, outcomes, scope, and non-goals.
-- [BRAIN.md](BRAIN.md): external knowledge provider, stable key, and access.
-- [STRUCTURE.md](STRUCTURE.md): code and external knowledge architecture.
-- [STATUS.md](STATUS.md): dated evidence, work state, blockers, and next steps.
+- [VISION.md](VISION.md): where the project is going and why.
+- [BRAIN.md](BRAIN.md): where knowledge lives and how to save it.
+- [PROGRESS.md](PROGRESS.md): current state and next steps.
+- [STRUCTURE.md](STRUCTURE.md): where code and knowledge live.
 
 [README.md](README.md) is the short setup entry. [CHANGELOG.md](CHANGELOG.md)
-records factual delivery history. [ROADMAP.md](ROADMAP.md) is a compatibility
-pointer to STATUS; keep lifecycle updates in STATUS.
+records factual delivery history. Keep lifecycle updates in PROGRESS.

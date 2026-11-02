@@ -1,7 +1,7 @@
 # App Preview changelog
 
 Dates below retain the recorded release history. Later unreleased source
-and verification work is tracked in [STATUS.md](STATUS.md).
+and verification work is tracked in [PROGRESS.md](PROGRESS.md).
 
 ## 2026-09-10 — 0.2.9
 
